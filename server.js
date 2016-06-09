@@ -112,6 +112,7 @@ async function work(body) {
   } catch (e) {
     console.error(e);
   }
+  console.log("Incoming webhook with data: ", data)
 
   // default config
   var repoConfig = {

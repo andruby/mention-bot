@@ -273,7 +273,7 @@ function getMatchingOwners(
   return owners;
 }
 
-function getGatekeeper(gatekeepers: Array<string>): {
+function getGatekeeper(gatekeepers) {
   var randomGatekeeper = gatekeepers[Math.floor(Math.random()*gatekeepers.length)];
   return randomGatekeeper;
 }

@@ -476,7 +476,7 @@ async function guessOwners(
   }
 
   if (gatekeepers.length > 0) {
-    owners.filter( function( el ) {
+    owners = owners.filter( function( el ) {
       return gatekeepers.indexOf( el ) < 0;
     });
   }

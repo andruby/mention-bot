@@ -450,6 +450,7 @@ async function guessOwners(
     return gatekeeper !== creator;
   })
   var gatekeeper = getGatekeeper(gatekeepers);
+  console.log("chosen gatekeeper from list ", gatekeeper, gatekeepers)
 
   var owners = []
     .concat(deletedOwners)

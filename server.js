@@ -112,7 +112,7 @@ async function work(body) {
   } catch (e) {
     console.error(e);
   }
-  console.log("Incoming webhook with data: ", data)
+  console.log("Incoming webhook for PR: ", data.pull_request.html_url)
 
   // default config
   var repoConfig = {

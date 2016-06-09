@@ -442,13 +442,11 @@ async function guessOwners(
     return !deletedOwnersSet.has(element);
   });
 
-  console.log("gatekeepers before filtering creator: ", gatekeepers)
   gatekeepers = gatekeepers.filter(function(gatekeeper) {
     return gatekeeper !== creator;
   })
-  console.log("gatekeepers after filtering creator: ", gatekeepers)
   var gatekeeper = getGatekeeper(gatekeepers);
-  console.log("chosen gatekeeper: ", gatekeeper)
+  console.log("chosen gatekeeper from list ", gatekeeper, gatekeepers)
 
   var owners = []
     .concat(deletedOwners)

@@ -131,6 +131,7 @@ async function work(body) {
     assignToReviewer: false,
     skipTitle: '',
     withLabel: '',
+    gatekeepers: [],
     skipCollaboratorPR: false,
   };
 

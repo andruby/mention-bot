@@ -272,7 +272,7 @@ async function work(body) {
     })
   }
 
-  function assignReviewer(data, reviewers, reject) {
+  function assignReviewers(data, reviewers, reject) {
     if (!repoConfig.assignToReviewer) {
       return;
     }
@@ -281,7 +281,7 @@ async function work(body) {
       user: data.repository.owner.login, // 'fbsamples'
       repo: data.repository.name, // 'bot-testing'
       number: data.pull_request.number, // 23
-      assignee: reviewers[0]
+      assignees: reviewers
     }, function(err) {
       if (err) {
         if (typeof reject === 'function') {
@@ -308,12 +308,12 @@ async function work(body) {
         }
 
         createComment(currentData, message, reject);
-        assignReviewer(currentData, reviewers, reject);
+        assignReviewers(currentData, reviewers, reject);
       });
     });
   } else {
     createComment(data, message);
-    assignReviewer(data, reviewers);
+    assignReviewers(data, reviewers);
   }
 
   return;
